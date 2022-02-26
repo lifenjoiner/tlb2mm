@@ -226,7 +226,7 @@ int CALLBACK gen_functions( ITypeInfo *pTinfo, FUNCDESC *pFuncDesc ) {
         VARTYPE     vt;
         // 1 more names
         pElemDesc = &(pFuncDesc->lprgelemdescParam[j-1]);
-        pParamDesc = &(pElemDesc->paramdesc);
+        pParamDesc = &(pElemDesc->DUMMYUNIONNAME.paramdesc);
         vt = pElemDesc->tdesc.vt;
         //
         if (j > 1) {_tprintf(_T(", "));}
@@ -442,7 +442,7 @@ int CALLBACK gen_tlb2mm( ITypeLib *ptlib ) {
 int _tmain(int argc, const TCHAR *argv[])
 {
     if (argc <2) {
-        _tprintf(_T("Usage: %s <dll-or-tlb-file> [> <out.mm>]\n"));
+        _tprintf(_T("Usage: %s <dll-or-tlb-file> [> <out.mm>]\n"), argv[0]);
         return 0;
     }
     file_name = PathFindFileName(argv[1]);
