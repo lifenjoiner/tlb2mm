@@ -442,7 +442,7 @@ int CALLBACK gen_tlb2mm( ITypeLib *ptlib ) {
 int _tmain(int argc, const TCHAR *argv[])
 {
     if (argc <2) {
-        _tprintf(_T("help\n"));
+        _tprintf(_T("Usage: %s <dll-or-tlb-file> [> <out.mm>]\n"));
         return 0;
     }
     file_name = PathFindFileName(argv[1]);
